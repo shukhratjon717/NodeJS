@@ -90,3 +90,7 @@ log(chalk.blue("Hello " + random + chalk.magentaBright(" !" )))
 // Module Package FILE
 
 
+
+
+// npm = node package manager.
+// nvm = node versial manager.
