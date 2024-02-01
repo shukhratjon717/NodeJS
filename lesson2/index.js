@@ -94,3 +94,5 @@ const chalk = require("chalk");
 const log = console.log;
 log(chalk.blue("hello") + "world" + chalk.red("!"));
 log(uuid4);
+
+// core
