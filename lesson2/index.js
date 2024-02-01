@@ -47,3 +47,50 @@ const data = fs.readFileSync('./input.txt', 'utf8');
 fs.writeFileSync('./input.txt', `${data} \n\t\t by Steve`);
 const new_data = fs.readFileSync("./input.txt", "utf8")
 console.log(new_data);
+
+// external package
+// External modulla ishlatishdan oldin install qilinishi kerak bo'lgan module packagelar hisoblanadi.
+// syntax: npm install package name --save 
+
+// moment() -> JSda date/timeni ko'rsatish, o'zgartirish, tekshirish va taxlil qilish uchun ishlatiladigan Js library hisoblanadi.
+const moment = require("moment");
+const time = moment().format();
+console.log(time);  // default time
+
+// setInterval(() => {
+//     const time2 = moment().format();
+//     console.log("Current time is:", time2);
+// }, 10000 )
+
+// 2) inquirer() - Bu NodeJS bilan command line interface ilovalari yaratishuchun foydali bo'lgan NPM package hisobanadi: u option, list, checkbox, input etc.. larni o'z ichiga oladi.
+const inquirer = require("inquirer");
+inquirer
+.prompt([{type: "input", name: "raqam", message: "Istalgan raqamni kiriting!"}])
+.then((answer) => {
+    console.log('Kiritilgan raqam qiymati:', answer.raqam);
+})
+.catch((err) => console.log(err));
+
+// 3) validator - malumotlarni tasdiqlash uchun ishlatiladi va boolean qiymat qaytaradi.
+const validator = require("validator");
+const email = validator.isEmail("hello@world.com");
+console.log('my eamil is: ', email);
+
+const num = validator.isInt("100");
+console.log(num);
+
+const ip = validator.isIP("112.212.144.218")
+console.log(ip);
+
+// 4) uuid = universal yagona bo'lgan aniqlovchi yaratish uchun ishlatiladi.
+// tasodfiy string yaratish uchun ishlatiladi.
+
+const {v4:uuid4} = require("uuid")
+const random = uuid4();
+console.log(random);
+
+// 5) chalk -> o'ziga biriktirilgan elementlarni rangini o'zgartirib consoleda chiqarib beradi.
+const chalk = require("chalk");
+const log = console.log;
+log(chalk.blue("hello") + "world" + chalk.red("!"));
+log(uuid4);
