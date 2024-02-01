@@ -63,13 +63,13 @@ console.log(time);  // default time
 // }, 10000 )
 
 // 2) inquirer() - Bu NodeJS bilan command line interface ilovalari yaratishuchun foydali bo'lgan NPM package hisobanadi: u option, list, checkbox, input etc.. larni o'z ichiga oladi.
-const inquirer = require("inquirer");
-inquirer
-.prompt([{type: "input", name: "raqam", message: "Istalgan raqamni kiriting!"}])
-.then((answer) => {
-    console.log('Kiritilgan raqam qiymati:', answer.raqam);
-})
-.catch((err) => console.log(err));
+// const inquirer = require("inquirer");
+// inquirer
+// .prompt([{type: "input", name: "raqam", message: "Istalgan raqamni kiriting!"}])
+// .then((answer) => {
+//     console.log('Kiritilgan raqam qiymati:', answer.raqam);
+// })
+// .catch((err) => console.log(err));
 
 // 3) validator - malumotlarni tasdiqlash uchun ishlatiladi va boolean qiymat qaytaradi.
 const validator = require("validator");
@@ -93,4 +93,35 @@ console.log(random);
 const chalk = require("chalk");
 const log = console.log;
 log(chalk.blue("hello") + "world" + chalk.red("!"));
-log(uuid4);
+
+
+
+// Module package FILE. 
+
+const calculate = require('./hisob');
+
+const natija = calculate.kopaytirish(80,20);
+console.log('Natija:', natija);
+console.log("+++++++++++++++++++");
+
+const natija2 = calculate.ayirish(80,20);
+console.log('Natija:', natija2);
+console.log(require("module").wrapper);
+
+
+const Account = require('./account')
+Account.tellMeAboutClass(); 
+Account.tellMeTime();
+
+console.log("==========");
+const myAccount = new Account('Steve', 200000, 1212345648856)
+myAccount.giveMeDetails();
+
+myAccount.makeDeposit(1000000);
+
+// Buggati  2,4 mln usd couldt'be bought
+
+// ferrari could be bought
+myAccount.withdrawMoney(400000);
+
+myAccount.makeDeposit(200000);
