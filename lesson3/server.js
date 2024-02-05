@@ -22,18 +22,14 @@ app.use(express.urlencoded({extended: true})); // HTML form dan kelgan malumotla
  app.set("view engine", "ejs");  // views folderni run qilish uchun shlatiladigan engine qaysiligi ko'rsailadi
 
  // 4) Routerlarga shakillantiriladi // routing codes
- app.get("/", function(req, res ) {
-    res.end(" <h1>Hello world </h1>")
- })
+app.post("/create-item", (req, res) => {
+    console.log(req.body);
+    res.json({test: "success"});
+})
 
- app.get("/hello", function( req, res) {
-    res.send("Bye World");
- })
-
- app.get("/gift", function( req, res) {
-    res.end("Welcome to the gift page");
- })
-
+app.get("/", function(req, res) {
+    res.render("harid")
+})
  const server = http.createServer(app) 
  const PORT = 3000
  server.listen(PORT, function() {
