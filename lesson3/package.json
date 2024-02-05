@@ -1,18 +1,20 @@
 {
   "name": "lesson3",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "This is for full explanation of what I learn in video classes",
+  "main": "server.js",
   "scripts": {
+    "start": "node server",
+    "dev": "nodemon server.js",
+    "train": "nodemon train.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Shukhrat",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^3.0.3"
-  },
   "dependencies": {
-    "node-schedule": "^2.1.1"
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^3.0.3"
   }
 }
